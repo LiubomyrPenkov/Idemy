@@ -1,0 +1,38 @@
+<h2>Create card</h2>
+<form [formGroup]="cardForm" (ngSubmit)="onSubmit()">
+  <label for="question">Question: </label>
+  <input id="question" type="text" formControlName="question" (change)="onFormControlChange()">
+  <div *ngIf="question?.invalid && (question?.dirty || question?.touched)" class="alert">
+    <div *ngIf="question?.errors?.['required']">
+      Question is required.
+    </div>
+  </div>
+
+  <label for="answer">Answer: </label>
+  <input id="answer" type="text" formControlName="answer" (change)="onFormControlChange()">
+  <div *ngIf="answer?.invalid && (answer?.dirty || answer?.touched)" class="alert">
+    <div *ngIf="answer?.errors?.['required']">
+      Answer is required.
+    </div>
+  </div>
+
+  <label for="category">Category: </label>
+  <input id="category" type="text" formControlName="category" (change)="onFormControlChange()">
+  <div *ngIf="category?.invalid && (category?.dirty || category?.touched)" class="alert">
+    <div *ngIf="category?.errors?.['required']">
+      Category is required.
+    </div>
+    <div *ngIf="category?.errors?.['maxlength']">
+      Category must be no more then 30 characters long.
+    </div>
+  </div>
+
+  <label for="imageUrl">Image url: </label>
+  <input id="imageUrl" type="text" formControlName="imageUrl" (change)="onFormControlChange()">
+  <div *ngIf="imageUrl?.invalid && (imageUrl?.dirty || imageUrl?.touched)" class="alert">
+    <div *ngIf="imageUrl?.errors?.['invalidUrl']">
+      Invalid URL
+    </div>
+  </div>
+  <button type="submit" [disabled]="!cardForm.valid">Create</button>
+</form>

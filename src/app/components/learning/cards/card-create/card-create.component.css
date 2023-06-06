@@ -1,0 +1,41 @@
+form {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 30px;
+  width: 50%;
+}
+
+input[type=text] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+button {
+  width: 100%;
+  background-color: #ea8f70;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button[type=submit]:active {
+  background-color: #f7b099;
+}
+
+.alert div {
+  color: #c62f2f;
+  padding: .3rem;
+  margin-bottom: 1rem;
+}
+
+input.ng-invalid.ng-touched {
+  border: red 1px solid;
+}

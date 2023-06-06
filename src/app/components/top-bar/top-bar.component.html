@@ -1,0 +1,7 @@
+<a [routerLink]="['/']">IdemY</a>
+<div>
+  <a [routerLink]="['/about']">About</a>
+  <a [routerLink]="['/learning']">My learning</a>
+  <a *ngIf="!authService.isLoggedIn" [routerLink]="['/login']">Login</a>
+  <a *ngIf="authService.isLoggedIn" (click)="logout()">Logout</a>
+</div>

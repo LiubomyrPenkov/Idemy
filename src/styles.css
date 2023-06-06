@@ -1,1 +1,20 @@
-/* You can add global styles to this file, and also import other style files */
+/* Global Styles */
+
+* {
+  font-family: 'Roboto', Arial, sans-serif;
+  color: #616161;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  background:
+    url('https://img.freepik.com/vector-premium/nina-sentada-sobre-montana-libros-mujer-leyendo-libro-vector_174639-3191.jpg') right bottom fixed no-repeat;
+  height: 100%;
+}
+
+router-outlet + *  {
+  padding: 0 16px;
+}

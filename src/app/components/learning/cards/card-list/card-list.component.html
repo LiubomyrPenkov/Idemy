@@ -1,0 +1,27 @@
+<div class="cards-header">
+  <h1>Cards</h1>
+  <button routerLink="./create-card" class="btn">+ Add new card</button>
+</div>
+
+<h3>Select card's category:</h3>
+<div class="categories-container">
+  <div class="category" *ngFor="let category of listOfCategories">
+    <span (click)="setCurrentCategory(category)">{{category}}</span>
+  </div>
+</div>
+
+
+<div *ngIf="cards$ | async as cards" class="cards-container">
+  <div
+    *ngFor="let card of cards | filterCards: filterCondition"
+    (click)="this.cardService.toggleTranslation(card)"
+    class="card-item"
+    [appHighlight]="card.isLearned"
+  >
+    <h2>{{ this.cardService.getDisplayedText(card) }}</h2>
+    <button [routerLink]="['./', card.id]" (click)="stopPropagation($event)">Details</button>
+  </div>
+  <div *ngIf="!cards.length">
+    <h2>Card list is empty!</h2>
+  </div>
+</div>

@@ -1,0 +1,6 @@
+<div *ngIf="card$ | async as card">
+  <h2>Card {{card.id}}</h2>
+  <h3>{{card.question}}</h3>
+  <p>{{card.answer}}</p>
+  <p>Category: {{card.category}}</p>
+</div>

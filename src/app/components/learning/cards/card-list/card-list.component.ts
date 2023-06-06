@@ -34,12 +34,4 @@ export class CardListComponent implements OnInit {
   setCurrentCategory(category: string): void {
     this.selectedCategory = category;
   }
-
-  filterCondition = (card: ICard): boolean => {
-    if (this.selectedCategory === 'all') {
-      return true;
-    }
-
-    return card.category === this.selectedCategory;
-  }
 }

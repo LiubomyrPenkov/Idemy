@@ -2,14 +2,15 @@ import { Pipe, PipeTransform } from '@angular/core';
 import { ICard } from '../components/learning/cards/card.model';
 
 @Pipe({
-  name: 'filterCards',
-  pure: false,
+  name: 'filterCards'
 })
 
 export class FilterCardsPipe implements PipeTransform {
-  transform(array: ICard[], condition: (item: ICard) => boolean): ICard[] {
-    if (!array) return array;
+  transform(array: ICard[], selectedCategory: string): ICard[] {
+    if (!array || selectedCategory === 'all') {
+      return array;
+    }
 
-    return array.filter(condition);
+    return array.filter(card => card.category === selectedCategory);
   }
 }

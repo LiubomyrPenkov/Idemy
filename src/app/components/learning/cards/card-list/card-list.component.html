@@ -13,7 +13,7 @@
 
 <div *ngIf="cards$ | async as cards" class="cards-container">
   <div
-    *ngFor="let card of cards | filterCards: filterCondition"
+    *ngFor="let card of cards | filterCards: selectedCategory"
     (click)="this.cardService.toggleTranslation(card)"
     class="card-item"
     [appHighlight]="card.isLearned"

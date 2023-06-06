@@ -1,0 +1,92 @@
+{
+  "cards": [
+    {
+      "id": 1,
+      "question": "dog",
+      "answer": "собака",
+      "category": "animals",
+      "createdAt": "2023-05-24",
+      "isLearned": false
+    },
+    {
+      "id": 2,
+      "question": "cat",
+      "answer": "кіт",
+      "category": "animals",
+      "createdAt": "2023-05-24",
+      "isLearned": true
+    },
+    {
+      "id": 3,
+      "question": "parrot",
+      "answer": "папуга",
+      "category": "animals",
+      "createdAt": "2023-05-24",
+      "isLearned": true
+    },
+    {
+      "id": 4,
+      "question": "orange",
+      "answer": "апельсин",
+      "category": "plants",
+      "createdAt": "2023-05-25",
+      "isLearned": false
+    },
+    {
+      "id": 5,
+      "question": "banana",
+      "answer": "банан",
+      "category": "plants",
+      "createdAt": "2023-05-26",
+      "isLearned": true
+    },
+    {
+      "id": 6,
+      "question": "kiwi",
+      "answer": "ківі",
+      "category": "plants",
+      "createdAt": "2023-05-26",
+      "isLearned": false
+    },
+    {
+      "id": 7,
+      "question": "bear",
+      "answer": "переносити",
+      "category": "verbs",
+      "createdAt": "2023-06-01",
+      "isLearned": false
+    },
+    {
+      "id": 8,
+      "question": "overcome",
+      "answer": "подолати",
+      "category": "verbs",
+      "createdAt": "2023-06-01",
+      "isLearned": false
+    },
+    {
+      "id": 0.5887520439476455,
+      "question": "onion",
+      "answer": "цибуля",
+      "category": "plants",
+      "createdAt": "2023-06-05T20:15:27.603Z",
+      "isLearned": false
+    },
+    {
+      "id": 0.36733145044390714,
+      "question": "fish",
+      "answer": "риба",
+      "category": "animals",
+      "createdAt": "2023-06-05T20:16:38.925Z",
+      "isLearned": false
+    },
+    {
+      "id": 0.041333083180946195,
+      "question": "bird",
+      "answer": "птах",
+      "category": "animals",
+      "createdAt": "2023-06-06T09:09:04.550Z",
+      "isLearned": false
+    }
+  ]
+}

@@ -16,14 +16,8 @@ export class CardListComponent implements OnInit {
   selectedCategory: string = 'all';
 
   ngOnInit(): void {
-    // this.getCards();
     this.getListOfCategories();
   }
-
-  // getCards(): void {
-  //   this.cardService.getCards()
-  //     .subscribe(cards => this.cards = cards);
-  // }
 
   getListOfCategories() {
     this.cardService.getCards()

@@ -30,12 +30,16 @@ export class CardCreateComponent {
     isLearned: [false],
   });
 
+  // better to not use getters here since they are function and you use them in template
+  // https://medium.com/showpad-engineering/why-you-should-never-use-function-calls-in-angular-template-expressions-e1a50f9c0496
+  // you can write something like questionControl = this.cardForm.get('question') and use properties in template
   get question() { return this.cardForm.get('question'); }
   get answer() { return this.cardForm.get('answer'); }
   get category() { return this.cardForm.get('category'); }
   get imageUrl() { return this.cardForm.get('imageUrl'); }
 
   onSubmit() {
+    // unsubscribe or use take(1)
     this.cardService.addCard(this.cardForm.value as ICard)
     .subscribe(
       card => {
@@ -46,12 +50,15 @@ export class CardCreateComponent {
   }
 
   canDeactivate(): Observable<boolean> | boolean {
-    if (this.isFormDirty) {
+    // if (this.cardForm.dirty) instead
+    if (this.cardForm.dirty) {
       return this.dialogService.confirm('Discard changes?');
     }
     return true;
   }
 
+  // using this.cardForm.dirty propery should be enough
+  // there is not need to create separate propery for it 
   onFormControlChange() {
     this.isFormDirty = true;
   }

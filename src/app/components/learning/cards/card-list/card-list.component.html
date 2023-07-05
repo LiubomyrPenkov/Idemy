@@ -1,3 +1,4 @@
+<!-- It's a good idea to use BEM for css classes  -->
 <div class="cards-header">
   <h1>Cards</h1>
   <button routerLink="./create-card" class="btn">+ Add new card</button>
@@ -18,6 +19,9 @@
     class="card-item"
     [appHighlight]="card.isLearned"
   >
+    <!-- calling method in template is a bad practice since it's call on every change detection cycle
+    please read this article  https://medium.com/showpad-engineering/why-you-should-never-use-function-calls-in-angular-template-expressions-e1a50f9c0496 
+    or find other ones  -->
     <h2>{{ this.cardService.getDisplayedText(card) }}</h2>
     <button [routerLink]="['./', card.id]" (click)="stopPropagation($event)">Details</button>
   </div>

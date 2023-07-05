@@ -27,6 +27,9 @@ export class CardsService {
     return this.http.post<ICard>(this.cardUrl, card);
   }
 
+
+  // I would separate two last method from this service and leave there only API calls 
+  // you can handle this logic in component
   toggleTranslation(card: ICard): void {
     this.translatedCardId = this.translatedCardId === card.id ? null : card.id;
   }

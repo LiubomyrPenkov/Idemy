@@ -1,10 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { ICard } from '../card.model';
 import { Observable } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
 import { CardsService } from '../card.service';
 
+// ChangeDetectionStrategy.OnPush - should be here and in other component 
 @Component({
   selector: 'app-card-details',
   templateUrl: './card-details.component.html',
@@ -13,6 +14,7 @@ import { CardsService } from '../card.service';
 export class CardDetailsComponent implements OnInit {
   card$!: Observable<ICard>;
 
+  // private service - is too generic name --> cardsService
   constructor(private route: ActivatedRoute, private service: CardsService) {
   }
 
